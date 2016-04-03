@@ -1,0 +1,21 @@
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Spaceman Body.xnb
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Spaceman Heads.xnb
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\GameEngine.exe
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\GameEngine.pdb
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Microsoft.Xna.Framework.dll
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Microsoft.Xna.Framework.xml
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\obj\x86\Debug\GameEngine.csprojResolveAssemblyReference.cache
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\obj\x86\Debug\GameEngine.exe
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\obj\x86\Debug\GameEngine.pdb
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Hitbox1.xnb
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Background1.xnb
+c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Foreground1.xnb

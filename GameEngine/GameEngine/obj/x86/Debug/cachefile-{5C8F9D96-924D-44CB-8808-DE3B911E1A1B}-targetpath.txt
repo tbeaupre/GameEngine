@@ -1,0 +1,5 @@
+Content\Spaceman Body.xnb
+Content\Spaceman Heads.xnb
+Content\Hitbox1.xnb
+Content\Background1.xnb
+Content\Foreground1.xnb

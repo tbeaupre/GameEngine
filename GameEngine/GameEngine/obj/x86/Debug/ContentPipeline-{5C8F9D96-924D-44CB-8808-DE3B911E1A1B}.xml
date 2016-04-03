@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>c:\users\tbopes\Pictures\Programming\Spaceman Body.png</Source>
+      <Name>Spaceman Body</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Spaceman Body.xnb</Output>
+      <Time>2015-05-27T18:53:13.8520429-04:00</Time>
+    </Item>
+    <Item>
+      <Source>c:\users\tbopes\Pictures\Programming\Spaceman Heads.png</Source>
+      <Name>Spaceman Heads</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Spaceman Heads.xnb</Output>
+      <Time>2015-05-27T18:51:39.9469078-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Hitbox1.png</Source>
+      <Name>Hitbox1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Hitbox1.xnb</Output>
+      <Time>2016-04-02T16:53:01.1898148-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Background1.png</Source>
+      <Name>Background1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Background1.xnb</Output>
+      <Time>2016-04-02T16:53:12.1920205-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Foreground1.png</Source>
+      <Name>Foreground1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Foreground1.xnb</Output>
+      <Time>2016-04-02T16:53:20.0688587-04:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{5C8F9D96-924D-44CB-8808-DE3B911E1A1B}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngineContent\</RootDirectory>
+      <LoggerRootDirectory>c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\</LoggerRootDirectory>
+      <IntermediateDirectory>c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T16:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T16:22:30-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2014-09-02T11:45:07.2432988-04:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>
