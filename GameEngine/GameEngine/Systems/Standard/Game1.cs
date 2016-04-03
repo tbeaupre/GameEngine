@@ -123,16 +123,18 @@ namespace GameEngine
             DrawAllySprites();
         }
 
-        public void DrawISprite(IObject sprite, float depth)
+        public void DrawIObject(IObject sprite, float depth)
         {
-            spriteBatch.Draw(sprite.GetTexture(), sprite.GetDestRect().ToRectangle(), sprite.GetSourceRect().ToRectangle(), Color.White, 0.0f, new Vector2(0, 0), SpriteEffects.None, depth);
+            SpriteEffects effect = SpriteEffects.None;
+            if (sprite.GetMirrored()) effect = SpriteEffects.FlipHorizontally;
+            spriteBatch.Draw(sprite.GetTexture(), sprite.GetDestRect().ToRectangle(), sprite.GetSourceRect().ToRectangle(), Color.White, 0.0f, new Vector2(0, 0), effect, depth);
         }
 
         public void DrawAllySprites()
         {
             foreach (IObject i in SpriteLibrary.Get().GetSpritesOfType(Allegiance.Ally))
             {
-                DrawISprite(i, 0.5f);
+                DrawIObject(i, 0.5f);
             }
         }
         

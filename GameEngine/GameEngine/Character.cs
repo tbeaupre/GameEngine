@@ -30,10 +30,12 @@ namespace GameEngine
             if (newKeys.IsKeyDown(Keys.Left))
             {
                 this.ChangeWorldCoords(-data.GetMoveSpeed(), 0, true);
+                SetMirrored(true);
             }
             if (newKeys.IsKeyDown(Keys.Right))
             {
                 this.ChangeWorldCoords(data.GetMoveSpeed(), 0, true);
+                SetMirrored(false);
             }
             if (newKeys.IsKeyDown(Keys.Z) && oldKeys.IsKeyUp(Keys.Z) && jumpNum < data.GetNumJumps())
             {

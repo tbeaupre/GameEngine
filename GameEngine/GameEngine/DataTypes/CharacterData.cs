@@ -16,7 +16,7 @@ namespace GameEngine
             // Default values
             jumpHeight = -7;
             numJumps = 2;
-            moveSpeed = 5;
+            moveSpeed = 3;
         }
 
         public double GetJumpHeight()

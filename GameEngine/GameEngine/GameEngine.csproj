@@ -16,8 +16,8 @@
     <XnaProfile>Reach</XnaProfile>
     <XnaCrossPlatformGroupID>085d2fb9-8be0-4a88-a03e-1398b5dc9e28</XnaCrossPlatformGroupID>
     <XnaOutputType>Game</XnaOutputType>
-    <ApplicationIcon>Game.ico</ApplicationIcon>
-    <Thumbnail>GameThumbnail.png</Thumbnail>
+    <ApplicationIcon>Systems\Standard\Game.ico</ApplicationIcon>
+    <Thumbnail>Systems\Standard\GameThumbnail.png</Thumbnail>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -72,27 +72,28 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AllegianceEnum.cs" />
+    <Compile Include="Enumerations\AllegianceEnum.cs" />
     <Compile Include="Ally.cs" />
     <Compile Include="Character.cs" />
-    <Compile Include="CharacterData.cs" />
-    <Compile Include="KeyboardHandler.cs" />
+    <Compile Include="DataTypes\CharacterData.cs" />
+    <Compile Include="ISprite.cs" />
+    <Compile Include="Systems\KeyboardHandler.cs" />
     <Compile Include="Object.cs" />
-    <Compile Include="CollisionDetector.cs" />
-    <Compile Include="DRectangle.cs" />
+    <Compile Include="Systems\CollisionDetector.cs" />
+    <Compile Include="DataTypes\DRectangle.cs" />
     <Compile Include="IObject.cs" />
     <Compile Include="Map.cs" />
-    <Compile Include="PhysicsEngine.cs" />
+    <Compile Include="Systems\PhysicsEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Game1.cs" />
-    <Compile Include="ScreenData.cs" />
-    <Compile Include="SpriteLibrary.cs" />
-    <Compile Include="TextureLibrary.cs" />
+    <Compile Include="Systems\Standard\Program.cs" />
+    <Compile Include="Systems\Standard\Game1.cs" />
+    <Compile Include="Systems\ScreenData.cs" />
+    <Compile Include="Systems\SpriteLibrary.cs" />
+    <Compile Include="Systems\TextureLibrary.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Game.ico" />
-    <Content Include="GameThumbnail.png">
+    <Content Include="Systems\Standard\Game.ico" />
+    <Content Include="Systems\Standard\GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
     </Content>
   </ItemGroup>
@@ -119,6 +120,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!--

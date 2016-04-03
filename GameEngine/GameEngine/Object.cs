@@ -16,6 +16,7 @@ namespace GameEngine
         double worldY = 0;
         double velX = 0;
         double velY = 0;
+        bool mirrored = false;
 
         public Object(Allegiance allegiance, Texture2D texture, double x, double y, int currentFrame, int numFrames)
         {
@@ -88,6 +89,11 @@ namespace GameEngine
             return new DRectangle(worldX + Map.Get().GetX(), worldY + Map.Get().GetY(), texture.Width / numFrames, texture.Height);
         }
 
+        public bool GetMirrored()
+        {
+            return this.mirrored;
+        }
+
         public int GetNumFrames()
         {
             return numFrames;
@@ -123,14 +129,19 @@ namespace GameEngine
             this.currentFrame = frameNum;
         }
 
-        public void SetTexture(Texture2D texture)
+        public void SetMirrored(bool val)
         {
-            this.texture = texture;
+            this.mirrored = val;
         }
 
         public void SetNumFrames(int i)
         {
             this.numFrames = i;
+        }
+
+        public void SetTexture(Texture2D texture)
+        {
+            this.texture = texture;
         }
 
         public virtual void Update()
