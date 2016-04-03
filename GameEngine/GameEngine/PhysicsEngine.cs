@@ -15,16 +15,19 @@ namespace GameEngine
         }
         #endregion
 
-        double gravity = 5; //Pixels per update
+        double gravity = .5; //Pixels per update
+        double terminalVel = 9; //Terminal Velocity for gravity updates.
 
         public PhysicsEngine() { }
 
         // Applies Physics to each sprite in the game
         public void ApplyPhysics()
         {
-            foreach (ISprite i in SpriteLibrary.Get().GetAllSprites())
+            foreach (IObject i in SpriteLibrary.Get().GetAllSprites())
             {
-                i.ChangeWorldCoords(0, gravity);
+                i.ChangeVelocity(0, gravity);
+                if (i.GetVelY() > terminalVel)
+                    i.SetVelocity(null, terminalVel);
             }
         }
     }

@@ -20,8 +20,10 @@ namespace GameEngine
         Texture2D hitbox;
         Texture2D foreground;
         int parallaxFactor = 5;
-        double x = 0;
-        double y = 0;
+        int x = 0;
+        int y = 0;
+        int offsetX = 0;
+        int offsetY = 0;
 
         public Map() { }
 
@@ -54,22 +56,48 @@ namespace GameEngine
 
         public double GetX()
         {
-            return this.x;
+            return this.x - offsetX;
         }
 
         public double GetY()
         {
-            return this.y;
+            return this.y - offsetY;
         }
 
-        public void ChangeX(double x)
+        public double GetOffsetX()
         {
-            this.x += x;
+            return this.offsetX;
         }
 
-        public void ChangeY(double y)
+        public double GetOffsetY()
+        {
+            return this.offsetY;
+        }
+
+        public void ChangeX(int deltaX)
+        {
+            this.x += deltaX;
+            if (this.x >= 0)
+            {
+                offsetX = this.x;
+            }
+            else if (this.x + hitbox.Width <= ScreenData.Get().GetLowResWidth())
+            {
+                offsetX = this.x + hitbox.Width - ScreenData.Get().GetLowResWidth();
+            }
+        }
+
+        public void ChangeY(int y)
         {
             this.y += y;
+            if (this.y >= 0)
+            {
+                offsetY = this.y;
+            }
+            else if (this.y + hitbox.Height <= ScreenData.Get().GetLowResHeight())
+            {
+                offsetY = this.y + hitbox.Height - ScreenData.Get().GetLowResHeight();
+            }
         }
     }
 }

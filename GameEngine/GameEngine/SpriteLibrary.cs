@@ -16,15 +16,15 @@ namespace GameEngine
         }
         #endregion
         
-        private List<ISprite> allySprites = new List<ISprite>();
-        private List<ISprite> enemySprites = new List<ISprite>();
-        private List<ISprite> neutralSprites = new List<ISprite>();
-        private List<ISprite> environmentSprites = new List<ISprite>();
+        private List<IObject> allySprites = new List<IObject>();
+        private List<IObject> enemySprites = new List<IObject>();
+        private List<IObject> neutralSprites = new List<IObject>();
+        private List<IObject> environmentSprites = new List<IObject>();
 
         public SpriteLibrary() { }
 
         // Adds a sprite to the list associated with its group
-        public void AddSprite(Allegiance allegiance, ISprite sprite)
+        public void AddSprite(Allegiance allegiance, IObject sprite)
         {
             switch (allegiance)
             {
@@ -44,7 +44,7 @@ namespace GameEngine
         }
 
         // Removes a Sprite from its group's list
-        public void DeleteSprite(Allegiance allegiance, ISprite sprite)
+        public void DeleteSprite(Allegiance allegiance, IObject sprite)
         {
             switch (allegiance)
             {
@@ -63,7 +63,7 @@ namespace GameEngine
             }
         }
 
-        public List<ISprite> GetSpritesOfType(Allegiance allegiance)
+        public List<IObject> GetSpritesOfType(Allegiance allegiance)
         {
             switch (allegiance)
             {
@@ -80,9 +80,9 @@ namespace GameEngine
             }
         }
 
-        public List<ISprite> GetAllSprites()
+        public List<IObject> GetAllSprites()
         {
-            List<ISprite> result = new List<ISprite>();
+            List<IObject> result = new List<IObject>();
             result.AddRange(allySprites);
             result.AddRange(enemySprites);
             result.AddRange(neutralSprites);
@@ -91,7 +91,7 @@ namespace GameEngine
             return result;
         }
 
-        public ISprite GetCharacter()
+        public IObject GetCharacter()
         {
             return allySprites[0];
         }

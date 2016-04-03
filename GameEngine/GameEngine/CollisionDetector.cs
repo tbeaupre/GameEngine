@@ -9,7 +9,7 @@ namespace GameEngine
     public static class CollisionDetector
     {
         // for rectangular collisions between two sprites.
-        public static bool RectCollisionDetect(ISprite sprite1, ISprite sprite2)
+        public static bool RectCollisionDetect(IObject sprite1, IObject sprite2)
         {
             return RectCollisionDetect(sprite1.GetDestRect(), sprite2.GetDestRect());
         }
@@ -23,7 +23,7 @@ namespace GameEngine
                 );
         }
 
-        public static bool MapCollisionDetect(ISprite sprite, double xOffset, double yOffset)
+        public static bool MapCollisionDetect(IObject sprite, double xOffset, double yOffset)
         {
             Map map = Map.Get();
             Rectangle rect = sprite.GetDestRect().ToRectangle();
@@ -58,7 +58,7 @@ namespace GameEngine
             return false;
         }
 
-        public static bool MapCollisionDetect(ISprite sprite)
+        public static bool MapCollisionDetect(IObject sprite)
         {
             return MapCollisionDetect(sprite, 0.0, 0.0);
         }

@@ -20,18 +20,13 @@ namespace GameEngine
         SpriteBatch spriteBatch;
         Texture2D sprite;
         public RenderTarget2D lowRes;
-        const int fullScreenWidth = 1920;
-        const int fullScreenHeight = 1080;
-        const int SCREEN_MULTIPLIER = 6;
-        const int lowResWidth = fullScreenWidth / SCREEN_MULTIPLIER;
-        const int lowResHeight = fullScreenHeight / SCREEN_MULTIPLIER;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
 
-            graphics.PreferredBackBufferWidth = fullScreenWidth;
-            graphics.PreferredBackBufferHeight = fullScreenHeight;
+            graphics.PreferredBackBufferWidth = ScreenData.Get().GetFullScreenWidth();
+            graphics.PreferredBackBufferHeight = ScreenData.Get().GetFullScreenHeight();
             //graphics.IsFullScreen = true;
 
             graphics.ApplyChanges();
@@ -49,7 +44,7 @@ namespace GameEngine
             // TODO: Add your initialization logic here
             TextureLibrary.Get().InitTextureLib(this.Content);
             SpriteLibrary.Get().AddSprite(Allegiance.Ally, new Character(100, 100));
-            SpriteLibrary.Get().AddSprite(Allegiance.Ally, new Ally(200, 200));
+            SpriteLibrary.Get().AddSprite(Allegiance.Ally, new Ally(200, 110));
             Map.Get().InitMap();
             sprite = TextureLibrary.Get().GetTexture("Spaceman Body");
             base.Initialize();
@@ -63,7 +58,7 @@ namespace GameEngine
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            lowRes = new RenderTarget2D(graphics.GraphicsDevice, lowResWidth, lowResHeight);
+            lowRes = new RenderTarget2D(graphics.GraphicsDevice, ScreenData.Get().GetLowResWidth(), ScreenData.Get().GetLowResHeight());
 
             // TODO: use this.Content to load your game content here
         }
@@ -89,7 +84,7 @@ namespace GameEngine
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
-            foreach (ISprite i in SpriteLibrary.Get().GetAllSprites())
+            foreach (IObject i in SpriteLibrary.Get().GetAllSprites())
             {
                 i.Update();
             }
@@ -128,14 +123,14 @@ namespace GameEngine
             DrawAllySprites();
         }
 
-        public void DrawISprite(ISprite sprite, float depth)
+        public void DrawISprite(IObject sprite, float depth)
         {
             spriteBatch.Draw(sprite.GetTexture(), sprite.GetDestRect().ToRectangle(), sprite.GetSourceRect().ToRectangle(), Color.White, 0.0f, new Vector2(0, 0), SpriteEffects.None, depth);
         }
 
         public void DrawAllySprites()
         {
-            foreach (ISprite i in SpriteLibrary.Get().GetSpritesOfType(Allegiance.Ally))
+            foreach (IObject i in SpriteLibrary.Get().GetSpritesOfType(Allegiance.Ally))
             {
                 DrawISprite(i, 0.5f);
             }
@@ -148,10 +143,10 @@ namespace GameEngine
             spriteBatch.Draw(
                 map.GetBackground(),
                 new Rectangle(
-                    (int)(map.GetX() * (6 / map.GetParallaxFactor()) * ((double)graphics.PreferredBackBufferWidth / (double)fullScreenWidth)),
-                    (int)(map.GetY() * (6 / map.GetParallaxFactor()) * ((double)graphics.PreferredBackBufferHeight / (double)fullScreenHeight)),
-                    (int)(map.GetBackground().Width * 6 * ((double)graphics.PreferredBackBufferWidth / (double)fullScreenWidth)),
-                    (int)(map.GetBackground().Height * 6 * ((double)graphics.PreferredBackBufferHeight / (double)fullScreenHeight))),
+                    (int)(map.GetX() * (6 / map.GetParallaxFactor()) * ((double)graphics.PreferredBackBufferWidth / (double)ScreenData.Get().GetFullScreenWidth())),
+                    (int)(map.GetY() * (6 / map.GetParallaxFactor()) * ((double)graphics.PreferredBackBufferHeight / (double)ScreenData.Get().GetFullScreenHeight())),
+                    (int)(map.GetBackground().Width * 6 * ((double)graphics.PreferredBackBufferWidth / (double)ScreenData.Get().GetFullScreenWidth())),
+                    (int)(map.GetBackground().Height * 6 * ((double)graphics.PreferredBackBufferHeight / (double)ScreenData.Get().GetFullScreenHeight()))),
                 null,
                 Color.White);
         }

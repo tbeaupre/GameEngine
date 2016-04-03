@@ -6,9 +6,12 @@ using Microsoft.Xna.Framework.Input;
 
 namespace GameEngine
 {
-    class Character : Sprite
+    class Character : Object
     {
-        double moveSpeed = 5;
+        CharacterData data = new CharacterData();
+
+        int jumpNum = 0;
+
         public Character(double x, double y) :
             base(Allegiance.Ally, TextureLibrary.Get().GetTexture("Spaceman Body"), x, y, 1, 13)
         {
@@ -17,39 +20,65 @@ namespace GameEngine
         public override void Update()
         {
             HandleKeys();
+            base.Update();
         }
 
         private void HandleKeys()
         {
-            if (KeyHandler.Get().GetNewKeys().IsKeyDown(Keys.Left))
+            KeyboardState newKeys = KeyHandler.Get().GetNewKeys();
+            KeyboardState oldKeys = KeyHandler.Get().GetOldKeys();
+            if (newKeys.IsKeyDown(Keys.Left))
             {
-                this.ChangeWorldCoords(-moveSpeed, 0);
+                this.ChangeWorldCoords(-data.GetMoveSpeed(), 0, true);
             }
-            if (KeyHandler.Get().GetNewKeys().IsKeyDown(Keys.Right))
+            if (newKeys.IsKeyDown(Keys.Right))
             {
-                this.ChangeWorldCoords(moveSpeed, 0);
+                this.ChangeWorldCoords(data.GetMoveSpeed(), 0, true);
+            }
+            if (newKeys.IsKeyDown(Keys.Z) && oldKeys.IsKeyUp(Keys.Z) && jumpNum < data.GetNumJumps())
+            {
+                jumpNum++;
+                this.SetVelocity(null, data.GetJumpHeight());
             }
         }
-        
-        public override void ChangeWorldCoords(double x, double y)
+
+        public override void HitFloor()
         {
-            for (int i = 0; i < Math.Abs(x); i++)
+            jumpNum = 0;
+            base.HitFloor();
+        }
+
+        public override void ChangeWorldCoords(double x, double y, bool collision)
+        {
+            if (collision)
             {
-                if (!CollisionDetector.MapCollisionDetect(this, Math.Sign(x), 0))
+                for (int i = 0; i < Math.Abs(x); i++)
                 {
-                    Map.Get().ChangeX(-Math.Sign(x));
-                    base.ChangeWorldCoords(Math.Sign(x), 0);
+                    if (!CollisionDetector.MapCollisionDetect(this, Math.Sign(x), 0))
+                    {
+                        Map.Get().ChangeX(-Math.Sign(x));
+                        base.ChangeWorldCoords(Math.Sign(x), 0, false);
+                    }
+                    else break;
                 }
-                else break;
+                for (int i = 0; i < Math.Abs(y); i++)
+                {
+                    if (!CollisionDetector.MapCollisionDetect(this, 0, Math.Sign(y)))
+                    {
+                        Map.Get().ChangeY(-Math.Sign(y));
+                        base.ChangeWorldCoords(0, Math.Sign(y), false);
+                    }
+                    else
+                    {
+                        if (Math.Sign(y) > 0) HitFloor();
+                        else HitCeiling();
+                        break;
+                    }
+                }
             }
-            for (int i = 0; i < Math.Abs(y); i++)
+            else
             {
-                if (!CollisionDetector.MapCollisionDetect(this, 0, Math.Sign(y)))
-                {
-                    Map.Get().ChangeY(-Math.Sign(y));
-                    base.ChangeWorldCoords(0, Math.Sign(y));
-                }
-                else break;
+                base.ChangeWorldCoords(x, y, false);
             }
         }
     }
