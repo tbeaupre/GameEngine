@@ -24,7 +24,8 @@ namespace GameEngine
         // Initializes the Texture library to contain all relevant Texture2Ds for the game.
         public void InitTextureLib(ContentManager content)
         {
-            AddTexture("Spaceman Body", content);
+            AddTexture("Spaceman Just Body", content);
+            AddTexture("Spaceman Legs", content);
             AddTexture("Spaceman Heads", content);
             AddTexture("Background1", content);
             AddTexture("Foreground1", content);

@@ -72,11 +72,15 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Overlay.cs" />
+    <Compile Include="PassiveOverlay.cs" />
     <Compile Include="Enumerations\AllegianceEnum.cs" />
     <Compile Include="Ally.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="DataTypes\CharacterData.cs" />
+    <Compile Include="IOverlay.cs" />
     <Compile Include="ISprite.cs" />
+    <Compile Include="ActiveOverlay.cs" />
     <Compile Include="Systems\KeyboardHandler.cs" />
     <Compile Include="Object.cs" />
     <Compile Include="Systems\CollisionDetector.cs" />

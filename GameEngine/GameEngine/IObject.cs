@@ -8,7 +8,8 @@ namespace GameEngine
 {
     public interface IObject: ISprite
     {
-        bool GetMirrored();
+        List<IOverlay> GetOverlays();
+        void AddOverlay(IOverlay overlay);
         void Update();
         double GetVelX();
         double GetVelY();

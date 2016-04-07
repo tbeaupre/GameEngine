@@ -30,22 +30,6 @@
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.VideoImporters, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\..\..\..\Pictures\Programming\Spaceman Body.png">
-      <Link>Spaceman Body.png</Link>
-      <Name>Spaceman Body</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="..\..\..\..\..\..\Pictures\Programming\Spaceman Heads.png">
-      <Link>Spaceman Heads.png</Link>
-      <Name>Spaceman Heads</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Hitbox1.png">
       <Name>Hitbox1</Name>
       <Importer>TextureImporter</Importer>
@@ -62,6 +46,28 @@
   <ItemGroup>
     <Compile Include="Foreground1.png">
       <Name>Foreground1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Spaceman Legs.png">
+      <Name>Spaceman Legs</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Spaceman Heads.png">
+      <Name>Spaceman Heads</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\..\..\Pictures\Programming\Spaceman Sprites\Spaceman Just Body.png">
+      <Link>Spaceman Just Body.png</Link>
+      <Name>Spaceman Just Body</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

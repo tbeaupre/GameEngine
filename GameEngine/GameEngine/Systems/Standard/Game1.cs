@@ -19,7 +19,7 @@ namespace GameEngine
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Texture2D sprite;
-        public RenderTarget2D lowRes;
+        RenderTarget2D lowRes;
 
         public Game1()
         {
@@ -124,6 +124,15 @@ namespace GameEngine
         }
 
         public void DrawIObject(IObject sprite, float depth)
+        {
+            DrawISprite(sprite, depth);
+            foreach (IOverlay o in sprite.GetOverlays())
+            {
+                DrawISprite(o, depth);
+            }
+        }
+
+        public void DrawISprite(ISprite sprite, float depth)
         {
             SpriteEffects effect = SpriteEffects.None;
             if (sprite.GetMirrored()) effect = SpriteEffects.FlipHorizontally;

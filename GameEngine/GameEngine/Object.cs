@@ -8,6 +8,7 @@ namespace GameEngine
 {
     public abstract class Object : IObject
     {
+        List<IOverlay> overlays = new List<IOverlay>();
         Allegiance allegiance;
         Texture2D texture;
         int currentFrame;
@@ -26,6 +27,16 @@ namespace GameEngine
             this.worldY = y;
             this.currentFrame = currentFrame;
             this.numFrames = numFrames;
+        }
+
+        public void AddOverlay(IOverlay overlay)
+        {
+            this.overlays.Add(overlay);
+        }
+
+        public List<IOverlay> GetOverlays()
+        {
+            return this.overlays;
         }
 
         public virtual void ChangeVelocity(double x, double y)
@@ -74,7 +85,7 @@ namespace GameEngine
             }
         }
 
-        public void Delete()
+        public virtual void Delete()
         {
             SpriteLibrary.Get().DeleteSprite(allegiance, this);
         }
@@ -124,7 +135,7 @@ namespace GameEngine
             this.allegiance = allegiance;
         }
 
-        public void SetCurrentFrame(int frameNum)
+        public virtual void SetCurrentFrame(int frameNum)
         {
             this.currentFrame = frameNum;
         }

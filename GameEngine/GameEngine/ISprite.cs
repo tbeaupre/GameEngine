@@ -8,6 +8,7 @@ namespace GameEngine
 {
     public interface ISprite
     {
+        bool GetMirrored();
         Texture2D GetTexture();
         DRectangle GetSourceRect();
         DRectangle GetDestRect();

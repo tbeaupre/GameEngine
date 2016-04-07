@@ -10,6 +10,7 @@ namespace GameEngine
         double jumpHeight;
         int numJumps;
         double moveSpeed;
+        int animationTimer;
         
         public CharacterData()
         {
@@ -17,6 +18,7 @@ namespace GameEngine
             jumpHeight = -7;
             numJumps = 2;
             moveSpeed = 3;
+            animationTimer = 20;
         }
 
         public double GetJumpHeight()
@@ -32,6 +34,11 @@ namespace GameEngine
         public int GetNumJumps()
         {
             return this.numJumps;
+        }
+
+        public int GetAnimationTimer()
+        {
+            return this.animationTimer;
         }
     }
 }

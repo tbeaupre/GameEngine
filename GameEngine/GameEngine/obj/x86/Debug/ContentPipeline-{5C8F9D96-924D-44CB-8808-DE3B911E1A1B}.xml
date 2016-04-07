@@ -2,24 +2,6 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>c:\users\tbopes\Pictures\Programming\Spaceman Body.png</Source>
-      <Name>Spaceman Body</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Spaceman Body.xnb</Output>
-      <Time>2015-05-27T18:53:13.8520429-04:00</Time>
-    </Item>
-    <Item>
-      <Source>c:\users\tbopes\Pictures\Programming\Spaceman Heads.png</Source>
-      <Name>Spaceman Heads</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Spaceman Heads.xnb</Output>
-      <Time>2015-05-27T18:51:39.9469078-04:00</Time>
-    </Item>
-    <Item>
       <Source>Hitbox1.png</Source>
       <Name>Hitbox1</Name>
       <Importer>TextureImporter</Importer>
@@ -46,6 +28,33 @@
       <Output>c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Foreground1.xnb</Output>
       <Time>2016-04-02T16:53:20.0688587-04:00</Time>
     </Item>
+    <Item>
+      <Source>Spaceman Legs.png</Source>
+      <Name>Spaceman Legs</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Spaceman Legs.xnb</Output>
+      <Time>2016-04-07T13:09:11.0449303-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Spaceman Heads.png</Source>
+      <Name>Spaceman Heads</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Spaceman Heads.xnb</Output>
+      <Time>2016-04-07T13:09:30.5112274-04:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Users\tbopes\Pictures\Programming\Spaceman Sprites\Spaceman Just Body.png</Source>
+      <Name>Spaceman Just Body</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Spaceman Just Body.xnb</Output>
+      <Time>2016-04-07T13:30:33.7117871-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{5C8F9D96-924D-44CB-8808-DE3B911E1A1B}</ContentProjectGUID>
@@ -53,10 +62,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngineContent\</RootDirectory>
-      <LoggerRootDirectory>c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\</LoggerRootDirectory>
-      <IntermediateDirectory>c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngineContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

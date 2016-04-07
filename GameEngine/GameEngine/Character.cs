@@ -9,16 +9,34 @@ namespace GameEngine
     class Character : Object
     {
         CharacterData data = new CharacterData();
-
+        bool animate = true;
+        int frameTimer = 0;
         int jumpNum = 0;
+        Nullable<int> queuedFrame = null;
 
         public Character(double x, double y) :
-            base(Allegiance.Ally, TextureLibrary.Get().GetTexture("Spaceman Body"), x, y, 1, 13)
+            base(Allegiance.Ally, TextureLibrary.Get().GetTexture("Spaceman Just Body"), x, y, 0, 13)
         {
+            this.AddOverlay(new ActiveOverlay(this,
+                0, // startFrame
+                -2, // xOffset
+                0,
+                new int[] { 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0, 0, 1 }, // xOffsets
+                new int[] { 4, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1 }, // yOffsets
+                3, "Spaceman Heads")); // Adds the Helmet
+            this.AddOverlay(new PassiveOverlay(this,
+                null,
+                -2, // xOffset
+                0,
+                null,
+                null,
+                13, "Spaceman Legs")); // Adds the spaceman's legs
         }
 
         public override void Update()
         {
+            AnimationCheck();
+            if (animate) IterateFrame();
             HandleKeys();
             base.Update();
         }
@@ -48,6 +66,32 @@ namespace GameEngine
         {
             jumpNum = 0;
             base.HitFloor();
+        }
+
+        // Since this sprite only changes frames every so often, there is an animation check to see if you can change the frame.
+        public void AnimationCheck()
+        {
+            frameTimer++;
+            if (frameTimer == data.GetAnimationTimer()) frameTimer = 0;
+            if (frameTimer == 0)
+            {
+                animate = true;
+                if (queuedFrame != null)
+                {
+                    SetCurrentFrame((int)queuedFrame);
+                    queuedFrame = null;
+                }
+            }
+            else animate = false;
+        }
+
+        public void IterateFrame()
+        {
+            SetCurrentFrame(GetCurrentFrame() + 1);
+            if (GetCurrentFrame() == GetNumFrames())
+            {
+                SetCurrentFrame(0);
+            }
         }
 
         public override void ChangeWorldCoords(double x, double y, bool collision)
@@ -82,6 +126,12 @@ namespace GameEngine
             {
                 base.ChangeWorldCoords(x, y, false);
             }
+        }
+
+        public override void SetCurrentFrame(int frameNum)
+        {
+            if (animate) base.SetCurrentFrame(frameNum);
+            else queuedFrame = frameNum;
         }
     }
 }
