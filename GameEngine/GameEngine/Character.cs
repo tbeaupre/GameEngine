@@ -62,7 +62,7 @@ namespace GameEngine
             }
             if (newKeys.IsKeyDown(Keys.X) && oldKeys.IsKeyUp(Keys.X))
             {
-                SpriteLibrary.Get().AddSprite(Allegiance.Environment, new Explosion(GetWorldX(), GetWorldY(), 2, false));
+                SpriteLibrary.Get().AddSprite(Allegiance.Environment, new Explosion(GetWorldX(), GetWorldY(), 1, false));
             }
         }
 
