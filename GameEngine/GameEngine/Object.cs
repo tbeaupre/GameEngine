@@ -8,6 +8,7 @@ namespace GameEngine
 {
     public abstract class Object : IObject
     {
+        double gravityFactor = 1;
         List<IOverlay> overlays = new List<IOverlay>();
         Allegiance allegiance;
         Texture2D texture;
@@ -27,6 +28,16 @@ namespace GameEngine
             this.worldY = y;
             this.currentFrame = currentFrame;
             this.numFrames = numFrames;
+        }
+
+        public double GetGravityFactor()
+        {
+            return gravityFactor;
+        }
+
+        public void SetGravityFactor(double d)
+        {
+            this.gravityFactor = d;
         }
 
         public void AddOverlay(IOverlay overlay)
@@ -187,6 +198,16 @@ namespace GameEngine
         public double GetVelY()
         {
             return velY;
+        }
+
+        public double GetWorldX()
+        {
+            return this.worldX;
+        }
+
+        public double GetWorldY()
+        {
+            return this.worldY;
         }
     }
 }

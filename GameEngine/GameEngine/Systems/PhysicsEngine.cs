@@ -25,7 +25,7 @@ namespace GameEngine
         {
             foreach (IObject i in SpriteLibrary.Get().GetAllSprites())
             {
-                i.ChangeVelocity(0, gravity);
+                i.ChangeVelocity(0, gravity * i.GetGravityFactor());
                 if (i.GetVelY() > terminalVel)
                     i.SetVelocity(null, terminalVel);
             }

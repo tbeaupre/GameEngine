@@ -30,6 +30,7 @@ namespace GameEngine
             AddTexture("Background1", content);
             AddTexture("Foreground1", content);
             AddTexture("Hitbox1", content);
+            AddTexture("Explosion", content);
         }
 
         // Makes it a bit simpler to add textures who are not in any folders

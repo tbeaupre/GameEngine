@@ -8,6 +8,7 @@ namespace GameEngine
 {
     public interface IObject: ISprite
     {
+        double GetGravityFactor();
         List<IOverlay> GetOverlays();
         void AddOverlay(IOverlay overlay);
         void Update();

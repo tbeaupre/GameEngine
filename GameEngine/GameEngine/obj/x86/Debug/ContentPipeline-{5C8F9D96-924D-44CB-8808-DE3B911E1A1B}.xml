@@ -55,6 +55,15 @@
       <Output>C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Spaceman Just Body.xnb</Output>
       <Time>2016-04-07T13:30:33.7117871-04:00</Time>
     </Item>
+    <Item>
+      <Source>C:\Users\tbopes\Pictures\Programming\Explosion.png</Source>
+      <Name>Explosion</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Explosion.xnb</Output>
+      <Time>2016-04-07T21:33:59.3037435-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{5C8F9D96-924D-44CB-8808-DE3B911E1A1B}</ContentProjectGUID>

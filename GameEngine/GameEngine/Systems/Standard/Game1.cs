@@ -120,7 +120,7 @@ namespace GameEngine
         public void DrawLowRes()
         {
             DrawLowResMap();
-            DrawAllySprites();
+            DrawSpriteLibrary();
         }
 
         public void DrawIObject(IObject sprite, float depth)
@@ -139,11 +139,17 @@ namespace GameEngine
             spriteBatch.Draw(sprite.GetTexture(), sprite.GetDestRect().ToRectangle(), sprite.GetSourceRect().ToRectangle(), Color.White, 0.0f, new Vector2(0, 0), effect, depth);
         }
 
-        public void DrawAllySprites()
+        public void DrawSpriteLibrary()
         {
-            foreach (IObject i in SpriteLibrary.Get().GetSpritesOfType(Allegiance.Ally))
+            DrawSpritesOfType(Allegiance.Ally, 0.5f);
+            DrawSpritesOfType(Allegiance.Environment, 0.3f);
+        }
+
+        public void DrawSpritesOfType(Allegiance allegiance, float layer)
+        {
+            for (int i = SpriteLibrary.Get().GetSpritesOfType(allegiance).Count() - 1; i >= 0; i--)
             {
-                DrawIObject(i, 0.5f);
+                DrawIObject(SpriteLibrary.Get().GetSpritesOfType(allegiance)[i], layer);
             }
         }
         

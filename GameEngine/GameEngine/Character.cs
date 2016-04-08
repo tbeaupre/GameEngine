@@ -15,7 +15,7 @@ namespace GameEngine
         Nullable<int> queuedFrame = null;
 
         public Character(double x, double y) :
-            base(Allegiance.Ally, TextureLibrary.Get().GetTexture("Spaceman Just Body"), x, y, 0, 13)
+            base(Allegiance.Ally, TextureLibrary.Get().GetTexture("Spaceman Just Body"), x, y, 1, 13)
         {
             this.AddOverlay(new ActiveOverlay(this,
                 0, // startFrame
@@ -36,8 +36,8 @@ namespace GameEngine
         public override void Update()
         {
             AnimationCheck();
-            if (animate) IterateFrame();
             HandleKeys();
+            JumpCheck();
             base.Update();
         }
 
@@ -59,6 +59,18 @@ namespace GameEngine
             {
                 jumpNum++;
                 this.SetVelocity(null, data.GetJumpHeight());
+            }
+            if (newKeys.IsKeyDown(Keys.X) && oldKeys.IsKeyUp(Keys.X))
+            {
+                SpriteLibrary.Get().AddSprite(Allegiance.Environment, new Explosion(GetWorldX(), GetWorldY(), 2, false));
+            }
+        }
+
+        public void JumpCheck()
+        {
+            if (!CollisionDetector.MapCollisionDetect(this,0,1) && jumpNum == 0)
+            {
+                jumpNum++;
             }
         }
 

@@ -20,3 +20,4 @@ c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\Game
 c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Foreground1.xnb
 C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Spaceman Just Body.xnb
 C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Spaceman Legs.xnb
+C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Explosion.xnb
