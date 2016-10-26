@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
 namespace GameEngine
@@ -13,6 +14,8 @@ namespace GameEngine
         int frameTimer = 0;
         int jumpNum = 0;
         Nullable<int> queuedFrame = null;
+        bool airDodging = false;
+        int airDodgeTimer = 0;
 
         public Character(double x, double y) :
             base(Allegiance.Ally, TextureLibrary.Get().GetTexture("Spaceman Just Body"), x, y, 1, 13)
@@ -35,6 +38,7 @@ namespace GameEngine
 
         public override void Update()
         {
+            IterateAirDodge();
             AnimationCheck();
             HandleKeys();
             JumpCheck();
@@ -43,26 +47,56 @@ namespace GameEngine
 
         private void HandleKeys()
         {
-            KeyboardState newKeys = KeyHandler.Get().GetNewKeys();
-            KeyboardState oldKeys = KeyHandler.Get().GetOldKeys();
-            if (newKeys.IsKeyDown(Keys.Left))
+            if (!airDodging)
             {
-                this.ChangeWorldCoords(-data.GetMoveSpeed(), 0, true);
-                SetMirrored(true);
+                KeyHandler keys = KeyHandler.Get();
+                if (keys.IsKeyHeld(Buttons.Left))
+                {
+                    this.ChangeWorldCoords(-data.GetMoveSpeed(), 0, true);
+                    SetMirrored(true);
+                }
+                if (keys.IsKeyHeld(Buttons.Right))
+                {
+                    this.ChangeWorldCoords(data.GetMoveSpeed(), 0, true);
+                    SetMirrored(false);
+                }
+                if (keys.IsKeyPressed(Buttons.Jump) && jumpNum < data.GetNumJumps())
+                {
+                    jumpNum++;
+                    this.SetVelocity(null, data.GetJumpHeight());
+                }
+                if (keys.IsKeyPressed(Buttons.Fire))
+                {
+                    SpriteLibrary.Get().AddSprite(Allegiance.Environment, new Explosion(GetWorldX(), GetWorldY(), 2, false));
+                }
+                if (keys.IsKeyPressed(Buttons.Dodge) && !CollisionDetector.MapCollisionDetect(this, 0, 1))
+                {
+                    AirDodge(keys);
+                }
             }
-            if (newKeys.IsKeyDown(Keys.Right))
+        }
+
+        public void AirDodge(KeyHandler keys)
+        {
+            base.SetCurrentFrame(5);
+            this.SetVelocity(keys.GetNewPad().ThumbSticks.Left.X * data.GetAirDodgeLength(), keys.GetNewPad().ThumbSticks.Left.Y * data.GetAirDodgeLength());
+            this.airDodging = true;
+            this.airDodgeTimer = data.GetAirDodgeTimer();
+            this.jumpNum = data.GetNumJumps() - 1;
+            SetGravityFactor(0);
+        }
+
+        public void IterateAirDodge()
+        {
+            this.airDodgeTimer--;
+            if (this.airDodgeTimer == data.GetAirDodgeTimer() / 4)
             {
-                this.ChangeWorldCoords(data.GetMoveSpeed(), 0, true);
-                SetMirrored(false);
+                SetVelocity(0, 0);
             }
-            if (newKeys.IsKeyDown(Keys.Z) && oldKeys.IsKeyUp(Keys.Z) && jumpNum < data.GetNumJumps())
+            if (this.airDodgeTimer == 0)
             {
-                jumpNum++;
-                this.SetVelocity(null, data.GetJumpHeight());
-            }
-            if (newKeys.IsKeyDown(Keys.X) && oldKeys.IsKeyUp(Keys.X))
-            {
-                SpriteLibrary.Get().AddSprite(Allegiance.Environment, new Explosion(GetWorldX(), GetWorldY(), 1, false));
+                SetCurrentFrame(1);
+                SetGravityFactor(1);
             }
         }
 
@@ -76,6 +110,7 @@ namespace GameEngine
 
         public override void HitFloor()
         {
+            airDodging = false;
             jumpNum = 0;
             base.HitFloor();
         }
