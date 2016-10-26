@@ -21,3 +21,11 @@ c:\users\tbopes\documents\visual studio 2015\Projects\GameEngine\GameEngine\Game
 C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Spaceman Just Body.xnb
 C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Spaceman Legs.xnb
 C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Content\Explosion.xnb
+C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Microsoft.DirectX.Direct3DX.dll
+C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Microsoft.DirectX.dll
+C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Microsoft.DirectX.Direct3D.dll
+C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Microsoft.DirectX.DirectInput.dll
+C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Microsoft.DirectX.Direct3DX.xml
+C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Microsoft.DirectX.xml
+C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Microsoft.DirectX.Direct3D.xml
+C:\Users\tbopes\Documents\Visual Studio 2015\Projects\GameEngine\GameEngine\GameEngine\bin\x86\Debug\Microsoft.DirectX.DirectInput.xml

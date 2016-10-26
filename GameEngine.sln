@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameEngine", "GameEngine\GameEngine\GameEngine.csproj", "{5C1EBD47-F39E-4FB9-A3CA-24C5BEBD3B00}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "GameEngineContent", "GameEngine\GameEngineContent\GameEngineContent.contentproj", "{5C8F9D96-924D-44CB-8808-DE3B911E1A1B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameEngineContent", "GameEngine\GameEngineContent\GameEngineContent.contentproj", "{5C8F9D96-924D-44CB-8808-DE3B911E1A1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

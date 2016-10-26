@@ -11,6 +11,8 @@ namespace GameEngine
         int numJumps;
         double moveSpeed;
         int animationTimer;
+        double airDodgeVel;
+        int airDodgeTimer;
         
         public CharacterData()
         {
@@ -19,6 +21,8 @@ namespace GameEngine
             numJumps = 2;
             moveSpeed = 3;
             animationTimer = 20;
+            airDodgeVel = 5;
+            airDodgeTimer = 10;
         }
 
         public double GetJumpHeight()
@@ -39,6 +43,16 @@ namespace GameEngine
         public int GetAnimationTimer()
         {
             return this.animationTimer;
+        }
+
+        public double GetAirDodgeLength()
+        {
+            return this.airDodgeVel;
+        }
+
+        public int GetAirDodgeTimer()
+        {
+            return this.airDodgeTimer;
         }
     }
 }
